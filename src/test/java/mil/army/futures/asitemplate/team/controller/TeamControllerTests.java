@@ -38,11 +38,10 @@ public class TeamControllerTests {
     TeamService teamService;
 
     @Test
-    public void whenGettingTeams_delegatesToTeamService() {
+    public void whenGettingTeams_returnsAListOfTeams() {
         var mockTeamsList = new ArrayList<TeamResponse>();
         mockTeamsList.add(TeamResponse.builder().name("Team 1").build());
         mockTeamsList.add(TeamResponse.builder().name("Team 2").build());
-
         when(teamService.getTeams()).thenReturn(mockTeamsList);
 
         var returnedTeams = teamService.getTeams();
@@ -51,7 +50,7 @@ public class TeamControllerTests {
     }
 
     @Test
-    public void whenCreatingTeam_delegatesToTeamService() throws Exception {
+    public void whenCreatingTeam_returnsTheCreatedTeam() throws Exception {
         var mockedTeamRequest = TeamRequest.builder().name("Team 1").build();
         var mockedTeamResponse = TeamResponse.builder().id(1L).name("Team 1").build();
         when(teamService.createTeam(mockedTeamRequest)).thenReturn(mockedTeamResponse);

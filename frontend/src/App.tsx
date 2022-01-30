@@ -42,7 +42,7 @@ function App() {
         </label>
         <button
             type="submit"
-        >Submit</button>
+        >Create Team</button>
       </form>
     </>
   );
