@@ -4,6 +4,6 @@ describe('loading the home page', () => {
     })
 
     it('loads the home page', () => {
-        cy.findByText("Learn React").should('exist')
+        cy.findByText(/Team name/i).should('exist')
     })
 })

@@ -1,9 +1,10 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import "./App.css";
 import { createTeam, getTeams } from "./teamsApiClient";
+import {Team} from "./Team";
 
 function App() {
-  const [teams, setTeams] = useState<string[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
   const [teamName, setTeamName] = useState<string>("");
 
   const setTeamNameFromInput = (e: FormEvent<HTMLInputElement>) => {
@@ -24,17 +25,24 @@ function App() {
   return (
     <>
       <ul>
-        {teams.map((team, i) => (
-          <li key={i}>{team}</li>
+        {teams.map((team, index) => (
+          <li key={index}>
+            {team.name}
+          </li>
         ))}
       </ul>
 
       <form onSubmit={submitForm}>
         <label>
           Team Name
-          <input name="team-name" type="text" onChange={setTeamNameFromInput} />
+          <input
+              name="team-name"
+              type="text"
+              onChange={setTeamNameFromInput} />
         </label>
-        <button type="submit">Submit</button>
+        <button
+            type="submit"
+        >Submit</button>
       </form>
     </>
   );

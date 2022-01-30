@@ -1,0 +1,1 @@
+INSERT INTO team_entity (name) VALUES ('Unallocated');
