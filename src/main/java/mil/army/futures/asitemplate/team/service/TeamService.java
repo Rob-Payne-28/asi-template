@@ -1,8 +1,8 @@
 package mil.army.futures.asitemplate.team.service;
 
 import lombok.AllArgsConstructor;
-import mil.army.futures.asitemplate.team.entity.TeamRequest;
 import mil.army.futures.asitemplate.team.entity.TeamEntity;
+import mil.army.futures.asitemplate.team.entity.TeamRequest;
 import mil.army.futures.asitemplate.team.entity.TeamResponse;
 import mil.army.futures.asitemplate.team.repository.TeamRepository;
 import org.springframework.stereotype.Service;
@@ -21,6 +21,7 @@ public class TeamService {
             teamResponses.add(
                     TeamResponse.builder()
                             .id(teamEntity.getId())
+                            .members(teamEntity.getMembers())
                             .name(teamEntity.getName())
                             .build()
             );
@@ -32,14 +33,21 @@ public class TeamService {
 
         var newTeamEntity = teamRepository.save(
                 TeamEntity.builder()
-                .id(null)
-                .name(teamRequest.getName())
-                .build()
+                        .name(teamRequest.getName())
+                        .build()
         );
 
         return TeamResponse.builder()
                 .id(newTeamEntity.getId())
                 .name(newTeamEntity.getName())
                 .build();
+    }
+
+    public TeamEntity findTeamByTeamName(String teamName) {
+        return teamRepository.findByName(teamName);
+    }
+
+    public void updateTeamMembers(TeamEntity teamEntity) {
+        teamRepository.save(teamEntity);
     }
 }

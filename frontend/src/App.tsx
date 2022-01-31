@@ -10,7 +10,7 @@ function App() {
 
     const setTeamNameFromInput = (e: FormEvent<HTMLInputElement>) => {
         setTeamName(e.currentTarget.value);
-    };
+    };
 
     const setPersonNameFromInput = (e: FormEvent<HTMLInputElement>) => {
         setPersonName(e.currentTarget.value);

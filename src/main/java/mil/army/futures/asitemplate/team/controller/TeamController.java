@@ -1,6 +1,8 @@
 package mil.army.futures.asitemplate.team.controller;
 
 import lombok.AllArgsConstructor;
+import mil.army.futures.asitemplate.person.entity.PersonRequest;
+import mil.army.futures.asitemplate.person.entity.PersonResponse;
 import mil.army.futures.asitemplate.team.entity.TeamRequest;
 import mil.army.futures.asitemplate.team.entity.TeamResponse;
 import mil.army.futures.asitemplate.team.service.TeamService;

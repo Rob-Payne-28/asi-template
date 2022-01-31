@@ -2,7 +2,6 @@ package mil.army.futures.asitemplate.team.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import mil.army.futures.asitemplate.team.controller.TeamController;
 import mil.army.futures.asitemplate.team.entity.TeamRequest;
 import mil.army.futures.asitemplate.team.entity.TeamResponse;
 import mil.army.futures.asitemplate.team.service.TeamService;
@@ -17,10 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

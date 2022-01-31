@@ -1,5 +1,7 @@
 package mil.army.futures.asitemplate.team.service;
 
+import mil.army.futures.asitemplate.person.entity.PersonRequest;
+import mil.army.futures.asitemplate.person.entity.PersonResponse;
 import mil.army.futures.asitemplate.team.entity.TeamRequest;
 import mil.army.futures.asitemplate.team.entity.TeamEntity;
 import mil.army.futures.asitemplate.team.entity.TeamResponse;
@@ -46,7 +48,6 @@ class TeamServiceTest {
                 .name("Team 1")
                 .build();
         var mockedTeamEntityRequested = TeamEntity.builder()
-                .id(null)
                 .name("Team 1")
                 .build();
         var mockedTeamEntityReturned = TeamEntity.builder()
